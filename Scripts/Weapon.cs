@@ -44,14 +44,14 @@ public class Weapon : Collidable
                 return;
 
             // Create new damage object, send it to the fighter hit
-            Damage dmg = new Damage();
+            Damage dmg = new Damage
             {
-                damageAmount = damagePoint;
-                origin = transform.position;
-                pushForce = pushForce;
-            }
+                damageAmount = damagePoint,
+                origin = transform.position,
+                pushForce = pushForce
+            };
 
-            coll.SendMessage("RecievedDamage", dmg);
+            coll.SendMessage("RecieveDamage", dmg);
         }
     }
 
